@@ -1,0 +1,38 @@
+<div class="container" style="background-color: #eeeeee; width: 80%; padding-top: 25px; padding-bottom: 25px;">
+    <h2>Registro Clientes</h2>
+<form [formGroup]="reactiveform" (ngsubmit)="guardarCliente()">
+    <div  class="row">
+        <div class="col-lg-4 form-group">
+            <label for ="cedula">Cédula</label>    
+            <input type="text" class="form-control" formControlName="cedula" required>
+            <br>
+            <span class="alert alert-danger" *ngIf="reactiveform.get('cedula')?.errors && reactiveform.get('cedula')?.touched" >Cédula requerida</span>
+        </div>
+    </div> 
+    <br>
+    <div  class="row">
+        <div class="col-lg-6 form-group">
+            <label for ="nombre">Nombre</label>
+            <input  type="text" class="form-control" formControlName="nombre" required>
+            <br>
+            <span class="alert alert-danger" *ngIf="reactiveform.get('nombre')?.errors && reactiveform.get('nombre')?.touched">Apellido Requerido</span>   
+        </div>
+    </div>  
+    <br>
+    <div  class="row">
+        <div class="col-lg-6 form-group">
+            <label for ="apellido">apellido</label>
+            <input  type="text" class="form-control" formControlName="apellido" required>
+            <br>
+            <span class="alert alert-danger" *ngIf="reactiveform.get('apellido')?.errors && reactiveform.get('apellido')?.touched">Apellido Requerido</span>   
+        </div>
+    </div>   
+    <br>
+    <div  class="row">
+        <div class="col-lg-12 form-group">
+        <button class="btn btn-info custom-btn" type="submit">Guardar</button>
+        </div>
+    </div>
+    
+</form>
+</div>
